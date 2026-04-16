@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-test-html
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>ArgoCD Test</title>
+      <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background: #1a1a2e; color: #e0e0e0; }
+        .container { text-align: center; }
+        h1 { font-size: 3rem; color: #00d2ff; }
+        p { font-size: 1.2rem; color: #888; }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <h1>It works!</h1>
+        <p>Deployed via ArgoCD from Git</p>
+      </div>
+    </body>
+    </html>
