@@ -14,7 +14,7 @@ spec:
     namespace: nginx-test
   syncPolicy:
     automated:
-      selfHeal: true
+      selfHeal: false
       prune: true
     syncOptions:
       - CreateNamespace=true
