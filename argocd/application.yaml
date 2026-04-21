@@ -8,11 +8,7 @@ spec:
   source:
     repoURL: https://github.com/alien2003/argocd-test.git
     targetRevision: HEAD
-    path: chart
-    helm:
-      valueFiles:
-        - values.yaml
-        - ../environments/values-dev.yaml
+    path: k8s
   destination:
     server: https://kubernetes.default.svc
     namespace: nginx-test
