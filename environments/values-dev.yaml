@@ -1,0 +1,14 @@
+replicaCount: 1
+
+html:
+  heading: "DEV environment"
+  bgColor: "#2d4a2b"
+  accentColor: "#90ee90"
+
+resources:
+  requests:
+    memory: "32Mi"
+    cpu: "25m"
+  limits:
+    memory: "64Mi"
+    cpu: "100m"

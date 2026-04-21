@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "nginx-test.fullname" . }}-html
+  labels:
+    {{- include "nginx-test.labels" . | nindent 4 }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>{{ .Values.html.title }}</title>
+      <style>
+        body {
+          font-family: sans-serif;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          background: {{ .Values.html.bgColor }};
+          color: #e0e0e0;
+        }
+        .container { text-align: center; }
+        h1 { font-size: 3rem; color: {{ .Values.html.accentColor }}; }
+        p { font-size: 1.2rem; color: #888; }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <h1>{{ .Values.html.heading }}</h1>
+        <p>{{ .Values.html.subtitle }}</p>
+      </div>
+    </body>
+    </html>
